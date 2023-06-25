@@ -1,3 +1,5 @@
+
+//WIZARD class 
 class wizard{
     constructor(name, hp , mp){
         this.name = name;
@@ -5,4 +7,9 @@ class wizard{
         this.maxhp = 100;
         this.mp = mp;
     }
+}
+
+//Scene Class that changes the background and story options
+class scene{
+
 }
