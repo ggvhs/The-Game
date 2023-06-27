@@ -3,8 +3,8 @@ body{
 }
 
 
-#title-screen{
-    background-image: url("./images/clouds.jpg");
+#goblin-screen{
+    background-image: url("./images/goblin.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -14,19 +14,6 @@ body{
     height: 100vh;
     margin: 0;
 }
-
-
-#start-button{
-    display: flex;
-    padding: 0;
-    color: rgb(255, 0, 0);
-    border: 1px solid red;
-    width: 70px;
-    cursor: pointer;
-}
-
-
-
 
 a{
     text-decoration: none;
