@@ -2,7 +2,15 @@ body{
     margin: 0;
 }
 
+.button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.button-container button{
+    margin-bottom: 20px;
+}
 #title-screen{
     background-image: url("./images/clouds.jpg");
     background-repeat: no-repeat;
@@ -16,7 +24,7 @@ body{
 }
 
 
-#start-button{
+#toGrass{
     display: flex;
     padding: 0;
     color: rgb(255, 0, 0);
@@ -25,5 +33,22 @@ body{
     cursor: pointer;
 }
 
+#grass{
+    background-image: url("./images/grassyLandscape.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
 
+
+
+a{
+    /* text-decoration: none;
+    color: inherit; */
+}
