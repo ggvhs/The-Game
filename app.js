@@ -151,6 +151,51 @@ resetFire.addEventListener('click', function() {
  })
 
 
+//From Fire to Lake
+const changeSceneFromFireToLake = function(){
+    let fromFire = document.querySelector('#fire')
+    fromFire.style.display = 'none';
+    let toLake = document.querySelector('#lake');
+    toLake.style.display = 'flex';
+
+    //show hp display
+    let wizardHp = document.querySelector('#wizard-hp-lake')
+    wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+
+    //A check for wizards hp
+    if(bobbyWizard.hp <= 0){
+        console.log(`${bobbyWizard.name} has died so sad....`)
+        let fromFire =document.querySelector('#fire');
+        fromFire.style.display = 'none';
+        let toDeath = document.querySelector('#death-screen');
+        toDeath.style.display='flex'
+
+    }
+}
+
+const toLake = document.getElementById('toLake')
+toLake.addEventListener('click' , changeSceneFromFireToLake)
+
+//Grabs reset by id
+const resetLake = document.getElementById('reset-lake');
+
+resetLake.addEventListener('click', function() {
+    const grandparentDiv = resetLake.parentNode.parentNode;
+    grandparentDiv.style.display = 'none';
+    const toTitle = document.querySelector('#title-screen')
+    toTitle.style.display = 'flex';
+    bobbyWizard.heal();
+ })
+
+
+
+
+
+
+
+
+
+
  const resetDeath = document.getElementById('reset-death');
 
  resetDeath.addEventListener('click', function(){
