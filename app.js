@@ -26,13 +26,11 @@ class wizard{
         this.hp -= ammount
         console.log(`${this.name} lost ${ammount} health. Current HP ${this.hp}`)
     }
-
-
-
-  
-
 }
 const bobbyWizard = new wizard('Bobby',50,50)
+
+
+//reset From death screen
 
 
 // takes the user from title to grass
@@ -74,6 +72,7 @@ resetGrass.addEventListener('click', function() {
 //Goes From grass to goblins
 
 const changeSceneFromGrassToGoblin = function(){
+
     let fromGrass = document.querySelector('#grass')
     fromGrass.style.display = 'none';
     let toGoblin = document.querySelector('#goblin');
@@ -84,10 +83,21 @@ const changeSceneFromGrassToGoblin = function(){
     //show hp display
     let wizardHp = document.querySelector('#wizard-hp-goblin')
     wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+
+    //A check for wizards hp
+    if(bobbyWizard.hp <= 0){
+        console.log(`${bobbyWizard.name} has died so sad....`)
+        let fromGoblin =document.querySelector('#goblin');
+        fromGoblin.style.display = 'none';
+        let toDeath = document.querySelector('#death-screen');
+        toDeath.style.display='flex'
+
+    }
+
+    
 }
 
 const toGoblin = document.getElementById('toGoblin')
-
 toGoblin.addEventListener('click' , changeSceneFromGrassToGoblin)
 
 //Grabs reset by id
@@ -99,5 +109,54 @@ resetGoblin.addEventListener('click', function() {
     const toTitle = document.querySelector('#title-screen')
     toTitle.style.display = 'flex';
     bobbyWizard.heal();
+ })
+
+
+
+
+//From Goblin to Fire
+ const changeSceneFromGoblinToFire = function(){
+    let fromGoblin = document.querySelector('#goblin')
+    fromGoblin.style.display = 'none';
+    let toFire = document.querySelector('#fire');
+    toFire.style.display = 'flex';
+
+    //show hp display
+    let wizardHp = document.querySelector('#wizard-hp-fire')
+    wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+
+    //A check for wizards hp
+    if(bobbyWizard.hp <= 0){
+        console.log(`${bobbyWizard.name} has died so sad....`)
+        let fromFire =document.querySelector('#fire');
+        fromFire.style.display = 'none';
+        let toDeath = document.querySelector('#death-screen');
+        toDeath.style.display='flex'
+
+    }
+}
+
+const toFire = document.getElementById('toFire')
+toFire.addEventListener('click' , changeSceneFromGoblinToFire)
+
+//Grabs reset by id
+const resetFire = document.getElementById('reset-fire');
+
+resetFire.addEventListener('click', function() {
+    const grandparentDiv = resetFire.parentNode.parentNode;
+    grandparentDiv.style.display = 'none';
+    const toTitle = document.querySelector('#title-screen')
+    toTitle.style.display = 'flex';
+    bobbyWizard.heal();
+ })
+
+
+ const resetDeath = document.getElementById('reset-death');
+
+ resetDeath.addEventListener('click', function(){
+    const parentDiv = resetDeath.parentNode;
+    parentDiv.style.display = 'none';
+    const toTitle = document.querySelector('#title-screen');
+    toTitle.style.display = 'flex';
  })
  
