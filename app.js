@@ -60,7 +60,10 @@ resetGrass.addEventListener('click', function() {
    bobbyWizard.heal();
 })
 
+/*
 
+
+*/
 
 
 
@@ -165,8 +168,8 @@ const changeSceneFromFireToLake = function(){
     //A check for wizards hp
     if(bobbyWizard.hp <= 0){
         console.log(`${bobbyWizard.name} has died so sad....`)
-        let fromFire =document.querySelector('#fire');
-        fromFire.style.display = 'none';
+        let fromLake =document.querySelector('#lake');
+        fromLake.style.display = 'none';
         let toDeath = document.querySelector('#death-screen');
         toDeath.style.display='flex'
 
@@ -189,6 +192,47 @@ resetLake.addEventListener('click', function() {
 
 
 
+ //From Lake to Mountain
+const changeSceneFromLakeToMountain = function(){
+    let fromLake = document.querySelector('#lake')
+    fromLake.style.display = 'none';
+    let toMountain = document.querySelector('#mountain');
+    toMountain.style.display = 'flex';
+
+    //show hp display
+    let wizardHp = document.querySelector('#wizard-hp-mountain')
+    wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+
+    //A check for wizards hp
+    if(bobbyWizard.hp <= 0){
+        console.log(`${bobbyWizard.name} has died so sad....`)
+        let fromMountain =document.querySelector('#mountain');
+        fromMountain.style.display = 'none';
+        let toDeath = document.querySelector('#death-screen');
+        toDeath.style.display='flex'
+
+    }
+}
+
+const toMountain = document.getElementById('toMountain')
+toMountain.addEventListener('click' , changeSceneFromLakeToMountain)
+
+//Grabs reset by id
+const resetMountain = document.getElementById('reset-mountain');
+
+resetMountain.addEventListener('click', function() {
+    const grandparentDiv = resetMountain.parentNode.parentNode;
+    grandparentDiv.style.display = 'none';
+    const toTitle = document.querySelector('#title-screen')
+    toTitle.style.display = 'flex';
+    bobbyWizard.heal();
+ })
+
+
+
+
+
+
 
 
 
@@ -205,3 +249,14 @@ resetLake.addEventListener('click', function() {
     toTitle.style.display = 'flex';
  })
  
+
+
+
+
+
+
+
+
+
+
+

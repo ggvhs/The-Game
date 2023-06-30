@@ -97,3 +97,18 @@ body{
     height: 100vh;
     margin: 0;
 }
+
+
+#mountain{
+    background-image: url("./images/mountain.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+}
+
+
