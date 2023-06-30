@@ -229,6 +229,85 @@ resetMountain.addEventListener('click', function() {
  })
 
 
+ //From Mountain to Egg
+ const changeSceneFromMountainToEgg = function(){
+    let fromMountain = document.querySelector('#mountain')
+    fromMountain.style.display = 'none';
+    let toEgg = document.querySelector('#egg');
+    toEgg.style.display = 'flex';
+
+    //show hp display
+    let wizardHp = document.querySelector('#wizard-hp-egg')
+    wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+
+    //A check for wizards hp
+    if(bobbyWizard.hp <= 0){
+        console.log(`${bobbyWizard.name} has died so sad....`)
+        let fromEgg = document.querySelector('#egg');
+        fromEgg.style.display = 'none';
+        let toDeath = document.querySelector('#death-screen');
+        toDeath.style.display='flex'
+
+    }
+}
+
+const toEgg = document.getElementById('toEgg')
+toEgg.addEventListener('click' , changeSceneFromMountainToEgg)
+
+//Grabs reset by id
+const resetEgg = document.getElementById('reset-egg');
+
+resetEgg.addEventListener('click', function() {
+    const grandparentDiv = resetEgg.parentNode.parentNode;
+    grandparentDiv.style.display = 'none';
+    const toTitle = document.querySelector('#title-screen')
+    toTitle.style.display = 'flex';
+    bobbyWizard.heal();
+ })
+
+
+
+
+
+
+ //From Egg to Dragon
+ const changeSceneFromEggToDragon = function(){
+    let fromEgg = document.querySelector('#egg')
+    fromEgg.style.display = 'none';
+    let toDragon = document.querySelector('#dragon');
+    toDragon.style.display = 'flex';
+
+    //show hp display
+    let wizardHp = document.querySelector('#wizard-hp-dragon')
+    wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+
+    //A check for wizards hp
+    if(bobbyWizard.hp <= 0){
+        console.log(`${bobbyWizard.name} has died so sad....`)
+        let fromDragon =document.querySelector('#dragon');
+        fromDragon.style.display = 'none';
+        let toDeath = document.querySelector('#death-screen');
+        toDeath.style.display='flex'
+
+    }
+}
+
+const toDragon = document.getElementById('toDragon')
+toDragon.addEventListener('click' , changeSceneFromEggToDragon)
+
+//Grabs reset by id
+const resetDragon = document.getElementById('reset-dragon');
+
+resetDragon.addEventListener('click', function() {
+    const grandparentDiv = resetDragon.parentNode.parentNode;
+    grandparentDiv.style.display = 'none';
+    const toTitle = document.querySelector('#title-screen')
+    toTitle.style.display = 'flex';
+    bobbyWizard.heal();
+ })
+
+
+
 
 
 

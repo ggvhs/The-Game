@@ -40,8 +40,8 @@ body{
 #toGrass{
     display: flex;
     padding: 0;
-    color: rgb(255, 0, 0);
-    border: 1px solid red;
+    color: rgb(79, 14, 97);
+    /* border: 1px solid red; */
     width: 70px;
     cursor: pointer;
 }
@@ -112,3 +112,29 @@ body{
 }
 
 
+#egg{
+    background-image: url("./images/egg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+
+
+}
+
+
+#dragon{
+    background-image: url("./images/dragon.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;  
+}
