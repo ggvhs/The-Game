@@ -118,6 +118,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-position-y: 80px;
     display: none;
     justify-content: center;
     align-items: center;
