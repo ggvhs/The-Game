@@ -156,8 +156,7 @@ body{
     align-items: center;
     height: 100vh;
     margin: 0; 
-    background-position: center;
-    background-position-y: 50px; 
+
 }
 
 #end{
@@ -170,6 +169,5 @@ body{
     align-items: center;
     height: 100vh;
     margin: 0; 
-    background-position: center;
-    background-position-y: 50px; 
+
 }

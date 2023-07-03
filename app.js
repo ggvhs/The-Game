@@ -378,6 +378,47 @@ resetStone.addEventListener('click', function() {
 
 
 
+ //From Dragon to Stone
+ const changeSceneFromStoneToEnd = function(){
+    let fromStone = document.querySelector('#stone')
+    fromStone.style.display = 'none';
+    let toEnd = document.querySelector('#end');
+    toEnd.style.display = 'flex';
+
+    //show hp display
+    let wizardHp = document.querySelector('#wizard-hp-end')
+    wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+    let dogHp = document.querySelector('#dog-hp-end');
+    dogHp.textContent = `Dog HP ${bobbysDog.hp}`
+
+    //A check for wizards hp
+    if(bobbyWizard.hp <= 0){
+        console.log(`${bobbyWizard.name} has died so sad....`)
+        let fromDragon =document.querySelector('#end');
+        fromDragon.style.display = 'none';
+        let toDeath = document.querySelector('#death-screen');
+        toDeath.style.display='flex'
+
+    }
+}
+
+const toEnd = document.getElementById('toEnd')
+toEnd.addEventListener('click' , changeSceneFromStoneToEnd )
+
+//Grabs reset by id
+const resetEnd = document.getElementById('reset-end');
+
+resetEnd.addEventListener('click', function() {
+    const grandparentDiv = resetEnd.parentNode.parentNode;
+    grandparentDiv.style.display = 'none';
+    const toTitle = document.querySelector('#title-screen')
+    toTitle.style.display = 'flex';
+    bobbyWizard.heal();
+    bobbysDog.heal();
+ })
+
+
+
 
 
 
