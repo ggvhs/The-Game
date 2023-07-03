@@ -27,7 +27,22 @@ class wizard{
         console.log(`${this.name} lost ${ammount} health. Current HP ${this.hp}`)
     }
 }
-const bobbyWizard = new wizard('Bobby',50,50)
+
+class dog{
+    constructor(name, hp){
+        this.name = name;
+        this.hp = hp;
+        this.maxHp = 75;
+    }
+
+    //A full heal for the dog
+    heal(){
+        this.hp = this.maxHp;
+        console.log(`${this.name} now has full hp ${this.hp}`)
+    }
+}
+const bobbyWizard = new wizard('Bobby',50,50);
+const bobbysDog = new dog('Yellow',75);
 
 
 //reset From death screen
@@ -239,6 +254,8 @@ resetMountain.addEventListener('click', function() {
     //show hp display
     let wizardHp = document.querySelector('#wizard-hp-egg')
     wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+    let dogHp = document.querySelector('#dog-hp-egg');
+    dogHp.textContent = `Dog HP ${bobbysDog.hp}`
 
     //A check for wizards hp
     if(bobbyWizard.hp <= 0){
@@ -280,6 +297,8 @@ resetEgg.addEventListener('click', function() {
     //show hp display
     let wizardHp = document.querySelector('#wizard-hp-dragon')
     wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+    let dogHp = document.querySelector('#dog-hp-dragon');
+    dogHp.textContent = `Dog HP ${bobbysDog.hp}`
 
     //A check for wizards hp
     if(bobbyWizard.hp <= 0){
@@ -304,6 +323,56 @@ resetDragon.addEventListener('click', function() {
     const toTitle = document.querySelector('#title-screen')
     toTitle.style.display = 'flex';
     bobbyWizard.heal();
+ })
+
+
+
+
+
+
+
+
+
+
+
+
+ //From Dragon to Stone
+ const changeSceneFromDragonToStone = function(){
+    let fromDragon = document.querySelector('#dragon')
+    fromDragon.style.display = 'none';
+    let toStone = document.querySelector('#stone');
+    toStone.style.display = 'flex';
+
+    //show hp display
+    let wizardHp = document.querySelector('#wizard-hp-stone')
+    wizardHp.textContent = `Hp ${bobbyWizard.hp}`
+    let dogHp = document.querySelector('#dog-hp-stone');
+    dogHp.textContent = `Dog HP ${bobbysDog.hp}`
+
+    //A check for wizards hp
+    if(bobbyWizard.hp <= 0){
+        console.log(`${bobbyWizard.name} has died so sad....`)
+        let fromDragon =document.querySelector('#stone');
+        fromDragon.style.display = 'none';
+        let toDeath = document.querySelector('#death-screen');
+        toDeath.style.display='flex'
+
+    }
+}
+
+const toStone = document.getElementById('toStone')
+toStone.addEventListener('click' , changeSceneFromDragonToStone )
+
+//Grabs reset by id
+const resetStone = document.getElementById('reset-stone');
+
+resetStone.addEventListener('click', function() {
+    const grandparentDiv = resetStone.parentNode.parentNode;
+    grandparentDiv.style.display = 'none';
+    const toTitle = document.querySelector('#title-screen')
+    toTitle.style.display = 'flex';
+    bobbyWizard.heal();
+    bobbysDog.heal();
  })
 
 

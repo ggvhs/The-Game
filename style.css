@@ -145,3 +145,31 @@ body{
     background-position: center;
     background-position-y: 50px; 
 }
+
+#stone{
+    background-image: url("./images/stone.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+    background-position: center;
+    background-position-y: 50px; 
+}
+
+#end{
+    background-image: url("./images/end.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+    background-position: center;
+    background-position-y: 50px; 
+}
