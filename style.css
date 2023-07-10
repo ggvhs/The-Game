@@ -11,8 +11,12 @@ body{
 
 .button-container button{
     margin-bottom: 20px;
-    position: sticky;
     top: 0;
+    background-color: orangered;
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+
 }
 
 
@@ -44,14 +48,28 @@ body{
     margin-top: 20px;
     max-width: 300px;
     text-align: center;
-    border: 1px solid red;
+
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
 }
+
+.story-black-font{
+    margin-top: 20px;
+    max-width: 300px;
+    text-align: center;
+   
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: bold;
+}
+
 
 
 #toGrass{
     display: flex;
     padding: 0;
-    color: rgb(79, 14, 97);
+    color: rgb(255, 60, 0);
     /* border: 1px solid red; */
     width: 70px;
     cursor: pointer;
