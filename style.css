@@ -37,13 +37,14 @@ body{
     align-items: center;
     height: 100vh;
     margin: 0;
+    text-align: center;
 }
 
-#title-story{
+.story{
     margin-top: 20px;
-    max-width: 350px;
-    word-wrap: break-word;
+    max-width: 300px;
     text-align: center;
+    border: 1px solid red;
 }
 
 
