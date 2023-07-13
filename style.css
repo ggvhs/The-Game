@@ -140,7 +140,7 @@ body{
     height: 100vh;
     margin: 0; 
     background-position: center;
-    background-position-y: 50px;
+    background-position-y: 0px;
 }
 
 
@@ -154,7 +154,7 @@ body{
     height: 100vh;
     margin: 0; 
     background-position: center;
-    background-position-y: 50px;
+    background-position-y: 0px;
 
 }
 
@@ -170,7 +170,7 @@ body{
     height: 100vh;
     margin: 0; 
     background-position: center;
-    background-position-y: 50px; 
+    background-position-y: 0px; 
 }
 
 #stone{
