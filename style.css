@@ -173,6 +173,8 @@ body{
     background-position-y: 0px; 
 }
 
+/* This is a comment  */
+
 #stone{
     background-image: url("./images/stone.jpg");
     background-repeat: no-repeat;
